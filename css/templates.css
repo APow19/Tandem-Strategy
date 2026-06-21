@@ -1,0 +1,367 @@
+/* ══════════════════════════════════════════════════════════
+   Tandem Strategy — templates.css
+   Used by: templates.html (library grid) and template fragments (print)
+   ══════════════════════════════════════════════════════════ */
+
+/* ── SHARED BRAND TOKENS ── */
+:root {
+  --ink:        #0f1217;
+  --ivory:      #f8f5ef;
+  --gold:       #b8974a;
+  --gold-light: #d4b06a;
+  --slate:      #2c3340;
+  --muted:      #6b7280;
+  --rule:       rgba(184,151,74,0.25);
+  --card-bg:    #ffffff;
+  --section-alt:#f3f0ea;
+}
+
+/* ══════════════════════════════════
+   LIBRARY PAGE — templates.html
+   ══════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ivory);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Nav */
+.tl-nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 72px;
+  background: rgba(248,245,239,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.tl-nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--ink); text-decoration: none;
+}
+.tl-nav-logo span { color: var(--gold); }
+.tl-nav-back {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--slate);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 0.4rem;
+  transition: color 0.2s;
+}
+.tl-nav-back:hover { color: var(--gold); }
+.tl-nav-back::before { content: '←'; }
+
+/* Hero band */
+.tl-hero {
+  padding: 80px 5vw 60px;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.tl-hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 5vw; right: 5vw;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+.tl-hero-label {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.tl-hero-label::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.tl-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 300; line-height: 1.1; color: var(--ink);
+  margin-bottom: 1rem;
+}
+.tl-hero h1 em { font-style: italic; color: var(--gold); }
+.tl-hero p {
+  font-size: 1rem; font-weight: 300; line-height: 1.75;
+  color: var(--muted); max-width: 560px;
+}
+
+/* Filter bar */
+.tl-filter-wrap { padding: 2rem 5vw; border-bottom: 1px solid var(--rule); }
+#filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.filter-btn {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.79rem; font-weight: 500; letter-spacing: 0.04em;
+  font-family: 'DM Sans', sans-serif;
+  border: 1px solid var(--rule);
+  background: transparent; cursor: pointer; border-radius: 2px;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.filter-btn:hover:not(.active) { border-color: var(--gold); color: var(--gold); }
+.filter-btn.active { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+
+/* Card grid */
+.tl-grid-wrap { padding: 3rem 5vw 5rem; }
+
+#template-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.template-card {
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1.75rem;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.template-card::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 100%;
+  height: 2px; background: var(--gold);
+  transition: right 0.35s ease;
+}
+.template-card:hover { border-color: rgba(184,151,74,0.4); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.template-card:hover::before { right: 0; }
+
+.tc-category {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.tc-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 600; color: var(--ink);
+  margin-bottom: 0.5rem; line-height: 1.3;
+}
+.tc-desc {
+  font-size: 0.82rem; line-height: 1.7; color: var(--muted);
+  font-weight: 300; flex: 1; margin-bottom: 1.5rem;
+}
+.tc-actions {
+  display: flex; gap: 0.6rem; flex-wrap: wrap;
+}
+.tc-btn {
+  padding: 0.55rem 1rem;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em;
+  font-family: 'DM Sans', sans-serif;
+  border: 1px solid var(--rule); background: transparent;
+  color: var(--ink); cursor: pointer; border-radius: 2px;
+  transition: all 0.2s;
+}
+.tc-btn:hover { border-color: var(--gold); color: var(--gold); }
+.tc-btn.tc-btn-primary {
+  background: var(--ink); color: var(--ivory); border-color: var(--ink);
+}
+.tc-btn.tc-btn-primary:hover { background: var(--gold); border-color: var(--gold); }
+.tc-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.tl-empty {
+  font-size: 0.88rem; color: var(--muted); grid-column: 1 / -1; padding: 2rem 0;
+}
+
+/* Fetch notice */
+.tl-notice {
+  margin: 0 5vw 0;
+  padding: 0.75rem 1rem;
+  background: rgba(184,151,74,0.08);
+  border: 1px solid rgba(184,151,74,0.25);
+  border-radius: 2px;
+  font-size: 0.78rem; color: var(--muted); line-height: 1.6;
+}
+.tl-notice strong { color: var(--ink); }
+
+/* Footer */
+.tl-footer {
+  background: var(--ink);
+  color: rgba(248,245,239,0.45);
+  padding: 2rem 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.78rem; gap: 1rem; flex-wrap: wrap;
+}
+.tl-footer a { color: var(--gold); text-decoration: none; }
+.tl-footer a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  #template-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  #template-grid { grid-template-columns: 1fr; }
+  .tl-hero { padding: 60px 5vw 40px; }
+}
+
+
+/* ══════════════════════════════════
+   TEMPLATE DOCUMENT STYLES
+   Applied inside print iframe + when loading fragment directly
+   ══════════════════════════════════ */
+
+.template-print-body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.7;
+  color: #111;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+
+.doc-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+}
+
+/* Document header */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #111;
+}
+.doc-brand {
+  font-family: Georgia, serif;
+  font-size: 22pt; font-weight: bold; letter-spacing: 0.02em;
+}
+.doc-brand span { color: #b8974a; }
+.doc-header-right { text-align: right; }
+.doc-title {
+  font-size: 18pt; font-weight: bold; letter-spacing: 0.04em;
+  text-transform: uppercase; color: #111;
+}
+.doc-ref { font-size: 9pt; color: #555; margin-top: 0.3rem; }
+
+/* Section blocks */
+.doc-section { margin-bottom: 1.75rem; }
+.doc-section-title {
+  font-size: 9pt; font-weight: bold; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #555;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.25rem; margin-bottom: 0.75rem;
+}
+
+/* Address block */
+.doc-address { font-size: 10pt; line-height: 1.8; }
+.doc-address strong { display: block; font-size: 11pt; margin-bottom: 0.1rem; }
+
+/* Detail rows */
+.doc-detail-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem;
+  font-size: 10pt;
+}
+.doc-detail-label { color: #555; }
+.doc-detail-value { font-weight: 600; }
+
+/* Line items table */
+.doc-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 10pt; margin-bottom: 1rem;
+}
+.doc-table th {
+  background: #f3f0ea;
+  font-size: 8.5pt; font-weight: bold; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #333;
+  padding: 0.6rem 0.75rem; text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+.doc-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.doc-table .text-right { text-align: right; }
+.doc-table tfoot td {
+  border-top: 2px solid #333; border-bottom: none;
+  font-weight: bold;
+}
+.doc-table tfoot tr:last-child td { font-size: 12pt; }
+
+/* Totals block */
+.doc-totals { margin-left: auto; width: 280px; }
+.doc-totals-row {
+  display: flex; justify-content: space-between;
+  padding: 0.3rem 0; font-size: 10pt;
+  border-bottom: 1px solid #eee;
+}
+.doc-totals-row.total {
+  font-size: 13pt; font-weight: bold;
+  border-top: 2px solid #111; border-bottom: none;
+  padding-top: 0.5rem; margin-top: 0.25rem;
+}
+
+/* Clause body */
+.doc-clause { margin-bottom: 1.25rem; }
+.doc-clause h3 {
+  font-size: 10.5pt; font-weight: bold; margin-bottom: 0.3rem;
+}
+.doc-clause p, .doc-clause ul, .doc-clause ol {
+  font-size: 10pt; line-height: 1.75; margin-bottom: 0.5rem;
+}
+.doc-clause ul, .doc-clause ol { padding-left: 1.5rem; }
+
+/* Signature block */
+.doc-signatures {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; margin-top: 2.5rem;
+}
+.doc-sig-block { border-top: 1px solid #333; padding-top: 0.75rem; }
+.doc-sig-label { font-size: 8.5pt; color: #555; text-transform: uppercase; letter-spacing: 0.08em; }
+.doc-sig-name { font-size: 10pt; font-weight: bold; margin-top: 0.3rem; }
+.doc-sig-line {
+  height: 40px; border-bottom: 1px solid #aaa; margin: 0.75rem 0 0.25rem;
+  display: block;
+}
+
+/* Notice box */
+.doc-notice {
+  background: #f9f7f2; border-left: 3px solid #b8974a;
+  padding: 0.75rem 1rem; font-size: 9.5pt; line-height: 1.7;
+  margin-bottom: 1.5rem; color: #333;
+}
+
+/* Placeholder styling — visible on screen, invisible on print */
+.ph {
+  background: #fff3cd; color: #856404;
+  padding: 0 2px; border-radius: 2px;
+  font-style: normal;
+}
+
+/* ══════════════════════════════════
+   PRINT STYLES
+   ══════════════════════════════════ */
+@media print {
+  /* Hide everything except template content */
+  body > *:not(.template-print-body),
+  .tl-nav, .tl-hero, .tl-filter-wrap, .tl-grid-wrap,
+  .tl-notice, .tl-footer { display: none !important; }
+
+  body, .template-print-body {
+    margin: 0; padding: 0;
+    font-size: 11pt; line-height: 1.65;
+    color: #000; background: white;
+  }
+
+  @page {
+    size: A4;
+    margin: 2.2cm 2.5cm;
+  }
+
+  .doc-wrap { padding: 0; max-width: none; }
+
+  /* Remove decorative backgrounds for print */
+  .doc-table th { background: #eee !important; }
+  .doc-notice   { background: #f5f5f5 !important; }
+
+  /* No page break inside signature blocks or short clauses */
+  .doc-signatures, .doc-clause, .doc-totals { page-break-inside: avoid; }
+
+  /* Placeholder visible on print so user knows what to fill in */
+  .ph { background: none; color: #000; font-weight: bold; }
+}

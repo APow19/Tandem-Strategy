@@ -1,0 +1,121 @@
+<div class="doc-wrap">
+
+  <div class="doc-header">
+    <div>
+      <div class="doc-brand">Tandem<span>.</span>Strategy</div>
+      <div style="font-size:9pt;color:#555;margin-top:0.3rem;">
+        <span class="ph">{{YOUR_COMPANY_NAME}}</span><br>
+        <span class="ph">{{YOUR_ADDRESS_LINE_1}}</span><br>
+        <span class="ph">{{YOUR_ADDRESS_LINE_2}}</span><br>
+        <span class="ph">{{YOUR_TOWN}}, {{YOUR_POSTCODE}}</span><br>
+        <span class="ph">{{YOUR_EMAIL}}</span>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-title">Invoice</div>
+      <div class="doc-ref">Invoice No: <strong class="ph">{{INVOICE_NUMBER}}</strong></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;">
+    <div class="doc-section">
+      <div class="doc-section-title">Bill To</div>
+      <div class="doc-address">
+        <strong class="ph">{{CLIENT_COMPANY_NAME}}</strong>
+        <span class="ph">{{CLIENT_CONTACT_NAME}}</span><br>
+        <span class="ph">{{CLIENT_ADDRESS_LINE_1}}</span><br>
+        <span class="ph">{{CLIENT_ADDRESS_LINE_2}}</span><br>
+        <span class="ph">{{CLIENT_TOWN}}, {{CLIENT_POSTCODE}}</span>
+      </div>
+    </div>
+    <div class="doc-section">
+      <div class="doc-section-title">Invoice Details</div>
+      <div class="doc-detail-grid">
+        <span class="doc-detail-label">Invoice Date</span>
+        <span class="doc-detail-value ph">{{DATE}}</span>
+        <span class="doc-detail-label">Due Date</span>
+        <span class="doc-detail-value ph">{{DUE_DATE}}</span>
+        <span class="doc-detail-label">Payment Terms</span>
+        <span class="doc-detail-value ph">{{PAYMENT_TERMS}}</span>
+        <span class="doc-detail-label">Purchase Order</span>
+        <span class="doc-detail-value ph">{{PO_NUMBER}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="doc-section-title">Services / Items</div>
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th style="width:50%">Description</th>
+          <th style="width:12%">Qty</th>
+          <th style="width:18%" class="text-right">Unit Price</th>
+          <th style="width:20%" class="text-right">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ph">{{SERVICE_DESCRIPTION_1}}</span></td>
+          <td><span class="ph">{{QTY_1}}</span></td>
+          <td class="text-right">£<span class="ph">{{UNIT_PRICE_1}}</span></td>
+          <td class="text-right">£<span class="ph">{{LINE_TOTAL_1}}</span></td>
+        </tr>
+        <tr>
+          <td><span class="ph">{{SERVICE_DESCRIPTION_2}}</span></td>
+          <td><span class="ph">{{QTY_2}}</span></td>
+          <td class="text-right">£<span class="ph">{{UNIT_PRICE_2}}</span></td>
+          <td class="text-right">£<span class="ph">{{LINE_TOTAL_2}}</span></td>
+        </tr>
+        <tr>
+          <td><span class="ph">{{SERVICE_DESCRIPTION_3}}</span></td>
+          <td><span class="ph">{{QTY_3}}</span></td>
+          <td class="text-right">£<span class="ph">{{UNIT_PRICE_3}}</span></td>
+          <td class="text-right">£<span class="ph">{{LINE_TOTAL_3}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="doc-totals">
+      <div class="doc-totals-row">
+        <span>Subtotal</span>
+        <span>£<span class="ph">{{SUBTOTAL}}</span></span>
+      </div>
+      <div class="doc-totals-row">
+        <span>VAT (20%)</span>
+        <span>£<span class="ph">{{VAT_AMOUNT}}</span></span>
+      </div>
+      <div class="doc-totals-row total">
+        <span>Total Due</span>
+        <span>£<span class="ph">{{TOTAL_DUE}}</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-section" style="margin-top:2rem;">
+    <div class="doc-section-title">Payment Details</div>
+    <div class="doc-detail-grid">
+      <span class="doc-detail-label">Bank Name</span>
+      <span class="doc-detail-value ph">{{BANK_NAME}}</span>
+      <span class="doc-detail-label">Account Name</span>
+      <span class="doc-detail-value ph">{{ACCOUNT_NAME}}</span>
+      <span class="doc-detail-label">Sort Code</span>
+      <span class="doc-detail-value ph">{{SORT_CODE}}</span>
+      <span class="doc-detail-label">Account Number</span>
+      <span class="doc-detail-value ph">{{ACCOUNT_NUMBER}}</span>
+      <span class="doc-detail-label">Reference</span>
+      <span class="doc-detail-value ph">{{INVOICE_NUMBER}}</span>
+    </div>
+  </div>
+
+  <div class="doc-notice">
+    <strong>Late payment notice:</strong> Payments not received by the due date may be subject to statutory interest at 8% above the Bank of England base rate under the Late Payment of Commercial Debts (Interest) Act 1998, together with fixed compensation of up to £100.
+  </div>
+
+  <div style="font-size:9pt;color:#555;text-align:center;margin-top:1.5rem;">
+    <span class="ph">{{YOUR_COMPANY_NAME}}</span>
+    &nbsp;·&nbsp; Registered in England &amp; Wales <span class="ph">{{COMPANY_NUMBER}}</span>
+    &nbsp;·&nbsp; VAT Reg. No. <span class="ph">{{VAT_NUMBER}}</span>
+  </div>
+
+</div>

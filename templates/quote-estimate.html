@@ -1,0 +1,135 @@
+<div class="doc-wrap">
+
+  <div class="doc-header">
+    <div>
+      <div class="doc-brand">Tandem<span>.</span>Strategy</div>
+      <div style="font-size:9pt;color:#555;margin-top:0.3rem;">
+        <span class="ph">{{YOUR_COMPANY_NAME}}</span><br>
+        <span class="ph">{{YOUR_ADDRESS_LINE_1}}</span><br>
+        <span class="ph">{{YOUR_TOWN}}, {{YOUR_POSTCODE}}</span><br>
+        <span class="ph">{{YOUR_EMAIL}}</span>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-title">Quotation</div>
+      <div class="doc-ref">Ref: <strong class="ph">{{QUOTE_NUMBER}}</strong></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;">
+    <div class="doc-section">
+      <div class="doc-section-title">Prepared For</div>
+      <div class="doc-address">
+        <strong class="ph">{{CLIENT_COMPANY_NAME}}</strong>
+        <span class="ph">{{CLIENT_CONTACT_NAME}}</span><br>
+        <span class="ph">{{CLIENT_ADDRESS_LINE_1}}</span><br>
+        <span class="ph">{{CLIENT_TOWN}}, {{CLIENT_POSTCODE}}</span>
+      </div>
+    </div>
+    <div class="doc-section">
+      <div class="doc-section-title">Quote Details</div>
+      <div class="doc-detail-grid">
+        <span class="doc-detail-label">Issue Date</span>
+        <span class="doc-detail-value ph">{{DATE}}</span>
+        <span class="doc-detail-label">Valid Until</span>
+        <span class="doc-detail-value ph">{{VALID_UNTIL}}</span>
+        <span class="doc-detail-label">Prepared By</span>
+        <span class="doc-detail-value ph">{{PREPARED_BY}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="doc-section-title">Scope of Work &amp; Pricing</div>
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th style="width:50%">Description</th>
+          <th style="width:12%">Qty</th>
+          <th style="width:18%" class="text-right">Unit Price</th>
+          <th style="width:20%" class="text-right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong class="ph">{{ITEM_NAME_1}}</strong><br>
+            <span style="font-size:9pt;color:#555;" class="ph">{{ITEM_DESCRIPTION_1}}</span>
+          </td>
+          <td><span class="ph">{{QTY_1}}</span></td>
+          <td class="text-right">£<span class="ph">{{UNIT_PRICE_1}}</span></td>
+          <td class="text-right">£<span class="ph">{{LINE_TOTAL_1}}</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong class="ph">{{ITEM_NAME_2}}</strong><br>
+            <span style="font-size:9pt;color:#555;" class="ph">{{ITEM_DESCRIPTION_2}}</span>
+          </td>
+          <td><span class="ph">{{QTY_2}}</span></td>
+          <td class="text-right">£<span class="ph">{{UNIT_PRICE_2}}</span></td>
+          <td class="text-right">£<span class="ph">{{LINE_TOTAL_2}}</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong class="ph">{{ITEM_NAME_3}}</strong><br>
+            <span style="font-size:9pt;color:#555;" class="ph">{{ITEM_DESCRIPTION_3}}</span>
+          </td>
+          <td><span class="ph">{{QTY_3}}</span></td>
+          <td class="text-right">£<span class="ph">{{UNIT_PRICE_3}}</span></td>
+          <td class="text-right">£<span class="ph">{{LINE_TOTAL_3}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="doc-totals">
+      <div class="doc-totals-row">
+        <span>Subtotal</span>
+        <span>£<span class="ph">{{SUBTOTAL}}</span></span>
+      </div>
+      <div class="doc-totals-row">
+        <span>VAT (20%)</span>
+        <span>£<span class="ph">{{VAT_AMOUNT}}</span></span>
+      </div>
+      <div class="doc-totals-row total">
+        <span>Total Investment</span>
+        <span>£<span class="ph">{{TOTAL}}</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-section" style="margin-top:2rem;">
+    <div class="doc-section-title">Terms &amp; Conditions of This Quote</div>
+    <ul style="font-size:10pt;line-height:1.8;padding-left:1.4rem;">
+      <li>This quotation is valid for <span class="ph">{{VALIDITY_DAYS}}</span> days from the issue date shown above, after which prices may be subject to review.</li>
+      <li>All prices are exclusive of VAT unless otherwise stated. VAT will be charged at the prevailing UK rate.</li>
+      <li>A deposit of <span class="ph">{{DEPOSIT_PERCENTAGE}}</span>% of the total quoted value is required prior to commencement of work.</li>
+      <li>The remaining balance is due within <span class="ph">{{PAYMENT_TERMS}}</span> days of the date of invoice.</li>
+      <li>Any changes to the scope of work after acceptance may be subject to a variation order and additional charges.</li>
+      <li>Work will not commence until written acceptance of this quotation has been received.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <div class="doc-section-title">Acceptance</div>
+    <p style="font-size:10pt;margin-bottom:1.5rem;">To accept this quotation, please sign below and return a copy to <span class="ph">{{YOUR_EMAIL}}</span>, or reply in writing confirming your acceptance.</p>
+    <div class="doc-signatures">
+      <div class="doc-sig-block">
+        <div class="doc-sig-label">Accepted on behalf of <span class="ph">{{CLIENT_COMPANY_NAME}}</span></div>
+        <span class="doc-sig-line"></span>
+        <div style="font-size:9pt;color:#555;margin-top:0.4rem;">
+          Name: ______________________________<br>
+          Date: ______________________________
+        </div>
+      </div>
+      <div class="doc-sig-block">
+        <div class="doc-sig-label">Issued by <span class="ph">{{YOUR_COMPANY_NAME}}</span></div>
+        <span class="doc-sig-line"></span>
+        <div style="font-size:9pt;color:#555;margin-top:0.4rem;">
+          Name: <span class="ph">{{PREPARED_BY}}</span><br>
+          Date: <span class="ph">{{DATE}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
